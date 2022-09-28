@@ -1,0 +1,52 @@
+import React, { Component, Fragment } from "react";
+import "./Product.css";
+import CardProduct from "./Card/CardProduct";
+// import { connect } from "react-redux";
+// import { RootContext } from "../../home/Home";
+import {GlobalConsumer} from "../../../context/context";
+
+/// bentuk statefull widget
+class Product extends Component {
+  render() {
+    return (
+      // <RootContext.Consumer>
+      //   {
+      //     value => {
+      //       return (
+      //         <Fragment>
+      //           <h1>Product</h1>
+      //           <hr />
+      //           <div className="header">
+      //             <div className="logo">{/* <img src="" alt="" /> */}</div>
+      //             <div className="troley">
+      //               <img src="https://img2.pngdownload.id/20180515/zfw/kisspng-shopping-cart-logo-shopping-bags-trolleys-5afb65b09c72d4.3564791415264250086408.jpg" alt="" />
+      //               <div className="count">{value.state.totalOrder}</div>
+      //             </div>
+      //           </div>
+
+      //           <CardProduct />
+      //         </Fragment>
+      //       );
+      //     }
+      //   }
+      // </RootContext.Consumer>
+
+      <Fragment>
+        <h1>Product</h1>
+        <hr />
+        <div className="header">
+          <div className="logo">{/* <img src="" alt="" /> */}</div>
+          <div className="troley">
+            <img src="https://img2.pngdownload.id/20180515/zfw/kisspng-shopping-cart-logo-shopping-bags-trolleys-5afb65b09c72d4.3564791415264250086408.jpg" alt="" />
+            <div className="count">{this.props.state.totalOrder}</div>
+          </div>
+        </div>
+        <CardProduct />
+      </Fragment>
+    );
+  }
+}
+
+/// context subrabsription
+export default GlobalConsumer(Product);
+// export default Product;
